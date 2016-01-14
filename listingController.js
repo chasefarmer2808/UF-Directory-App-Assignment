@@ -2,15 +2,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
   function($scope, Listings) {
     $scope.listings = Listings;
     $scope.detailedInfo = undefined;
-    $scope.newListing = {
-      code: '',
-      name: '',
-      coordinates: {
-        latitude: '',
-        longitude: ''
-      },
-      address: ''
-    };
+    $scope.newListing = {};
 
     /*
       Implement these functions in the controller to make your application function
@@ -18,6 +10,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
      */
     $scope.addListing = function() {
       $scope.listings.push($scope.newListing);
+      $scope.newListing = {};
     };
     $scope.deleteListing = function(index) {
       $scope.listings.splice(index, 1);
