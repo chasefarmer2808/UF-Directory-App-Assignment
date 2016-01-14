@@ -1,3 +1,8 @@
+body {
+  background: url('comp.png');
+  background-repeat: no-repeat;
+}
+
 #searchBar {
   margin: 15px 10px;
 }
@@ -7,9 +12,9 @@
   overflow: auto;
 }
 
-.detailTable, .detailHeader, .detailRow, .detailData {
+/*.detailTable, .detailHeader, .detailRow, .detailData {
   border: 1px solid black;
-}
+}*/
 
 .detailHeader {
   padding: 5px;
