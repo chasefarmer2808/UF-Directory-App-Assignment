@@ -15,8 +15,13 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.deleteListing = function(index) {
       $scope.listings.splice(index, 1);
     };
-    $scope.showDetails = function(index) {
-      $scope.detailedInfo = $scope.listings[index];
+    $scope.showDetails = function(input) {
+
+      for (var i = 0; i < $scope.listings.length; i++) {
+        if ($scope.listings[i].code == input) {
+          $scope.detailedInfo = $scope.listings[i];
+        }
+      }
     };
   }
 ]);
