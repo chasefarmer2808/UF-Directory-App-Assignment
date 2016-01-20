@@ -22,22 +22,12 @@ var entries = Factory.entries;
 for (var i = 0; i < entries.length; i++) {
   var newListing;
 
-  if (entries[i].hasOwnProperty('coordinates')) {
-    newListing = new Listing({
-      code: entries[i].code,
-      name: entries[i].name,
-      coordinates: {
-        latitude: entries[i].coordinates.latitude,
-        longitude: entries[i].coordinates.longitude
-      },
-      address: entries[i].address
-    });
-  } else {
-    newListing = new Listing({
-      code: entries[i].code,
-      name: entries[i].name
-    });
-  }
+  newListing = new Listing({
+    code: entries[i].code,
+    name: entries[i].name,
+    coordinates: entries[i].coordinates,
+    address: entries[i].address
+  });
 
   /*
     Once you've written + run the script, check out your MongoLab database to ensure that

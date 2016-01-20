@@ -16,10 +16,19 @@ var listingSchema = new Schema({
     unique: true
   },
   coordinates: {
-    latitude: Number,
-    longitude: Number
+    latitude: {
+      type: Number,
+      default: 0
+    },
+    longitude: {
+      type: Number,
+      default: 0
+    }
   },
-  address: String,
+  address: {
+    type: String,
+    default: ""
+  },
   created_at: Date,
   updated_at: Date
 });
