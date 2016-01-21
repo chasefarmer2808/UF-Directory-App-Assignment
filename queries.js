@@ -25,11 +25,12 @@ var removeCable = function() {
     and remove this listing from your database and log the document to the console.
    */
 
-   Listing.findOneAndRemove({code: 'CABL'}, function(err) {
+   Listing.findOneAndRemove({code: 'CABL'}, function(err, listing) {
      if (err) throw err;
 
-     console.log('Listing deleted!');
-   })
+     console.log('Listing successfully deleted.');
+     console.log(listing);
+   });
 };
 var updatePhelpsMemorial = function() {
   /*
@@ -37,15 +38,11 @@ var updatePhelpsMemorial = function() {
     log the updated document to the console.
    */
 
-   Listing.find({code: 'PHL'}, function(err, listing) {
+   Listing.findOneAndUpdate({code: 'PHL'}, {address: '100 Phelps Lab, Museum Road, Gainesville FL, 32611, United States'}, function(err, listing) {
      if (err) throw err;
 
-     listing.address = '100 Phelps Lab, Museum Road, Gainesville FL, 32611, United States';
-     listing.latitude = 29.644548;
-     listing.longitude = -82.348819;
-
      console.log(listing);
-   })
+   });
 };
 var retrieveAllListings = function() {
   /*
